@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kinsluv Live Stream</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header><h1>Kinsluv Live Stream</h1></header>
+
+    <main>
+      <section class="left">
+        <div class="video-wrap">
+          <!-- Replace with your HLS/MP4 stream URL; use hls.js if needed -->
+          <video id="player" controls autoplay playsinline>
+            <source src="https://storage.coverr.co/videos/coverr-crazys-fast-mountain-bikers-1574?token=demo" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+        </div>
+
+        <div class="meta">
+          <input id="roomInput" placeholder="room (default: main)" />
+          <input id="username" placeholder="username" />
+          <input id="password" placeholder="(optional) password" type="password" />
+          <button id="joinBtn">Join</button>
+          <div id="userInfo" class="hidden">Logged in as <span id="meName"></span> — Coins: <span id="meCoins"></span></div>
+        </div>
+
+        <div id="giftAnimation" class="giftAnimation"></div>
+      </section>
+
+      <aside class="right">
+        <div class="chat">
+          <div id="messages" class="messages"></div>
+          <div class="chatInput">
+            <input id="msgInput" placeholder="Say something" />
+            <button id="sendBtn">Send</button>
+          </div>
+        </div>
+
+        <div class="gifts">
+          <h3>Gifts</h3>
+          <div id="giftsList"></div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>© Kinsluv Live Stream</footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

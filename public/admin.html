@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kinsluv Admin</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { padding:18px; }
+    .adminPanel { max-width:1000px; margin:auto; }
+    table { width:100%; border-collapse:collapse; margin-top:8px; }
+    th, td { text-align:left; padding:8px; border-bottom:1px solid #222; font-size:14px; }
+    .controls input { padding:8px; margin-right:6px; }
+    .danger { background:#ff9bb6; color:#000; border:0; padding:6px 8px; border-radius:6px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="adminPanel">
+    <h1>Kinsluv Admin Panel</h1>
+
+    <div id="loginBox">
+      <input id="adminPass" type="password" placeholder="Admin password" />
+      <button id="adminLogin">Login</button>
+    </div>
+
+    <div id="panel" class="hidden">
+      <h2>Stats</h2>
+      <div id="stats"></div>
+
+      <h2>Users</h2>
+      <div class="controls">
+        <input id="userIdField" placeholder="User ID" />
+        <input id="amountField" placeholder="Amount" type="number" />
+        <button id="addCoinsBtn">Add Coins</button>
+        <button id="banBtn" class="danger">Ban</button>
+        <button id="unbanBtn">Unban</button>
+      </div>
+      <table id="usersTable"><thead><tr><th>ID</th><th>Username</th><th>Role</th><th>Coins</th><th>Banned</th></tr></thead><tbody></tbody></table>
+
+      <h2>Transactions</h2>
+      <table id="txTable"><thead><tr><th>User</th><th>Gift</th><th>Cost</th><th>Room</th><th>Time</th></tr></thead><tbody></tbody></table>
+
+      <h2>Messages (live actions)</h2>
+      <div class="controls">
+        <input id="msgIdField" placeholder="Message ID to delete" />
+        <button id="delMsgBtn">Delete Message</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
